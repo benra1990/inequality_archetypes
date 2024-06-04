@@ -189,7 +189,7 @@ write.xlsx( barplot_db_es, "Z:/Paper_inequalities/Datos/total_values_cluster_es.
 barplot_db_es [2:9]<-scale(barplot_db_es[2:9], center=TRUE, scale=TRUE)#z-score data
 barplot_db1_es<-as.data.frame(barplot_db_es)
 
-#rearrage data for plotting and annotations
+#rearrange data for plotting and annotations
 
 barplot_db1_es<-barplot_db1_es[,-1]
 barplot_db1_es<-barplot_db1_es[,c(1,7,6,2,3,4,5,8)]
@@ -226,125 +226,125 @@ colnames(annotation_final_es)[1:6]<-c("cluster1","cluster2", "cluster3", "cluste
 
 ESA1<-ggplot(barplot_db1_es, aes(x=factor(ES, levels=ES), y=cluster1, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-1,2.2,0.5), labels=seq(-1,2.2,0.5), limit=c(-1, 2.2))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("ESA-1") +
   theme_minimal()+
-  theme(legend.position="none",axis.text.y = element_text(size=11)) +
+  theme(legend.position="none",axis.text.y = element_text(size=16), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
 
 ESA1<-ESA1 +annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "39.1")+
+  annotate("text", x=3.7,y=1.85, label = "39.1", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "29.8")+
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=1.85, label = "29.8", size=5)+
   
-  annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "31.1")
+  annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=1.85, label = "31.1", size=5)
 ESA1
 
 
 ESA2<-ggplot(barplot_db1_es, aes(x=factor(ES, levels=ES), y=cluster2, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-1,2.2,0.5), labels=seq(-1,2.2,0.5), limit=c(-1, 2.2))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("ESA-2") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
 
 ESA2<-ESA2 +annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "54.2")+
+  annotate("text", x=3.7,y=1.85, label = "54.2", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "33.4")+
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=1.85, label = "33.4", size=5)+
   
-  annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "12.4")
+  annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=1.85, label = "12.4", size=5)
 ESA2
 
 
 
 ESA3<-ggplot(barplot_db1_es, aes(x=factor(ES, levels=ES), y=cluster3, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-1,2.2,0.5), labels=seq(-1,2.2,0.5), limit=c(-1, 2.2))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("ESA-3") +
   theme_minimal()+
-  theme(legend.position="none",axis.text.y = element_text(size=11)) +
+  theme(legend.position="none",axis.text.y = element_text(size=16), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
 
 ESA3<-ESA3 +annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "43.4")+
+  annotate("text", x=3.7,y=1.85, label = "43.4", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "46.9")+
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=1.85, label = "46.9", size=5)+
   
-  annotate("rect", xmin=6.8,xmax=7.8,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7.3,y=1.85, label = "9.7")
+  annotate("rect", xmin=6.8,xmax=7.8,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7.3,y=1.85, label = "9.7", size=5)
 ESA3
 
 ESA4<-ggplot(barplot_db1_es, aes(x=factor(ES, levels=ES), y=cluster4, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-1,2.2,0.5), labels=seq(-1,2.2,0.5), limit=c(-1, 2.2))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("ESA-4") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
 
 ESA4<-ESA4 +annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "38")+
+  annotate("text", x=3.7,y=1.85, label = "38", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "48.2")+
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=1.85, label = "48.2", size=5)+
   
-  annotate("rect", xmin=5.4,xmax=6.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=5.9,y=1.85, label = "13.8")
+  annotate("rect", xmin=5.4,xmax=6.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=5.9,y=1.85, label = "13.8", size=5)
 ESA4
 
 
 ESA5<-ggplot(barplot_db1_es, aes(x=factor(ES, levels=ES), y=cluster5, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-1,2.2,0.5), labels=seq(-1,2.2,0.5), limit=c(-1, 2.2))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("ESA-5") +
   theme_minimal()+
-  theme(legend.position="none",axis.text.y = element_text(size=11)) +
+  theme(legend.position="none",axis.text.y = element_text(size=16), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
 ESA5<-ESA5 +annotate("rect", xmin=3.2,xmax=4.2,ymin=1.9,ymax=2.2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=2.05, label = "74.2")+
+  annotate("text", x=3.7,y=2.05, label = "74.2", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "17")+
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=1.85, label = "17", size=5)+
   
-  annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "8.8")
+  annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=1.85, label = "8.8", size=5)
 ESA5
 
 
 ESA6<-ggplot(barplot_db1_es, aes(x=factor(ES, levels=ES), y=cluster6, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-1,2.2,0.5), labels=seq(-1,2.2,0.5), limit=c(-1, 2.2))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("water supply","native timber","non-native timber","water regulation","carbon sequestration","carbon storage","erosion prevention","recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("ESA-6") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
 ESA6<-ESA6 +annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "53.2")+
+  annotate("text", x=3.7,y=1.85, label = "53.2", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "34.8")+
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=1.85, label = "34.8", size=5)+
   
-  annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "12")
+  annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=1.85, label = "12", size=5)
 ESA6
 
 
@@ -460,7 +460,7 @@ legend(10,5,legend=c("Mean dist","DB index"),pch=c(2,3),col=c(4,2),box.col="whit
 
 ### 3. INTERPReTATION ####
 
-som_select <- 7# make it flexible! Set the optimal parameterisation for SOM clusters. Important: the selected option ( in this case 4) does not represent the number of clusters but the fouth option( see"som.dims").
+som_select <- 7# make it flexible! Set the optimal parametrisation for SOM clusters. Important: the selected option ( in this case 4) does not represent the number of clusters but the fourth option( see"som.dims").
 
 final.som <- som_test[[som_select]] # select final clusters
 
@@ -554,63 +554,64 @@ colnames(annotation_final)[1:10]<-c("cluster1","cluster2", "cluster3", "cluster4
 
 GiniA1<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster1, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-1") +
   theme_minimal()+
-  theme(legend.position="none",axis.text.y = element_text(size=11)) +
+  theme(legend.position="none",axis.text.y = element_text(size=16), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA1<-GiniA1 + annotate("rect", xmin=5.4,xmax=6.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=5.9,y=1.85, label = "47.5", size=3)+
+
+GiniA1<-GiniA1 + annotate("rect", xmin=5.4,xmax=6.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=5.9,y=2.2, label = "47.5", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "41", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "41", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "11.5", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "11.5", size=5)
 GiniA1
 
 
 
 GiniA2<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster2, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-2") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA2<-GiniA2 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "46.8", size=3)+
+GiniA2<-GiniA2 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=2.2, label = "46.8", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "41.3", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "41.3", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "11.9", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "11.9", size=5)
 GiniA2
 
 
 
 GiniA3<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster3, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-3") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA3<-GiniA3 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "26.2", size=3)+
+GiniA3<-GiniA3 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=2.2, label = "26.2", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "61", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "61", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "12.8", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "12.8", size=5)
 GiniA3
 
 
@@ -618,21 +619,21 @@ GiniA3
 
 GiniA4<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster4, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-4") +
   theme_minimal()+
-  theme(legend.position="none",axis.text.y = element_text(size=11)) +
+  theme(legend.position="none",axis.text.y = element_text(size=16), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA4<-GiniA4 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "25.5", size=3)+
+GiniA4<-GiniA4 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=2.2, label = "25.5", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "59.7", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "59.7", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "14.8", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "14.8", size=5)
 GiniA4
 
 
@@ -640,126 +641,130 @@ GiniA4
 
 GiniA5<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster5, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-5") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA5<-GiniA5 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.5,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.75, label = "56.3", size=3)+
+GiniA5<-GiniA5 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=2.2, label = "56.3", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.5,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.75, label = "43.2", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "43.2", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.5,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.75, label = "0.5", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "0.5", size=5)
 GiniA5
 
 
 
 GiniA6<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster6, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,3,0.5), labels=seq(-2,3,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-6") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA6<-GiniA6 + annotate("rect", xmin=6.3,xmax=7.3,ymin=2.5,ymax=2.8, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=6.8,y=2.65, label = "27.5", size=3)+
+GiniA6<-GiniA6 + annotate("rect", xmin=6.3,xmax=7.3,ymin=2.5,ymax=3, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=6.8,y=2.75, label = "27.5", size=5)+
   
-  annotate("rect", xmin=3.7,xmax=4.7,ymin=2.5,ymax=2.8, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=4.2,y=2.65, label = "53.4", size=3)+
+  annotate("rect", xmin=3.7,xmax=4.7,ymin=2.5,ymax=3, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=4.2,y=2.75, label = "53.4", size=5)+
   
-  annotate("rect", xmin=0.5,xmax=1.5,ymin=2.5,ymax=2.8, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=1,y=2.65, label = "19.1", size=3)
+  annotate("rect", xmin=0.5,xmax=1.5,ymin=2.5,ymax=3, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=1,y=2.75, label = "19.1", size=5)
 GiniA6
+
 
 
 
 GiniA7<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster7, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-7") +
   theme_minimal()+
-  theme(legend.position="none",axis.text.y = element_text(size=11)) +
+  theme(legend.position="none",axis.text.y = element_text(size=16), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA7<-GiniA7 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "16", size=3)+
+GiniA7<-GiniA7 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=2.2, label = "16", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "70.8", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "70.8", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "13.2", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "13.2", size=5)
 GiniA7
+
 
 
 
 GiniA8<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster8, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-8") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA8<-GiniA8 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "31.9", size=3)+
+GiniA8<-GiniA8 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=2.2, label = "31.9", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "49.9", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "49.9", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "18.2", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "18.2", size=5)
 GiniA8
+
 
 
 
 GiniA9<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster9, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-9") +
   theme_minimal()+
-  theme(legend.position="none", axis.text.y = element_blank()) +
+  theme(legend.position="none",axis.text.y = element_blank(), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA9<-GiniA9 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "33.9", size=3)+
+GiniA9<-GiniA9 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=2.2, label = "33.9", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "54.5", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "54.5", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "11.6", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "11.6", size=5)
 GiniA9
+
 
 
 
 GiniA10<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster10, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-2,2,0.5), labels=seq(-2,2,0.5))+
+  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
-  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("red","red", "red","purple","purple","purple","purple","green"))+
+  scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-10") +
   theme_minimal()+
-  theme(legend.position="none",axis.text.y = element_text(size=11)) +
+  theme(legend.position="none",axis.text.y = element_text(size=16), axis.text.x = element_text(size=14), plot.title = element_text(size=18), axis.title = element_text(size = 16)) +
   labs(x="", y ="z-score")
-GiniA10<-GiniA10 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.7,ymax=2, alpha=.5, fill="white", color="red",lwd=1)+
-  annotate("text", x=7,y=1.85, label = "33.9", size=3)+
+GiniA10<-GiniA10 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#006CD1",lwd=1)+
+  annotate("text", x=7,y=2.2, label = "33.9", size=5)+
   
-  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.7,ymax=2, alpha=.5, fill="white", color="purple",lwd=1)+
-  annotate("text", x=3.7,y=1.85, label = "54.5", size=3)+
+  annotate("rect", xmin=3.2,xmax=4.2,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="purple",lwd=1)+
+  annotate("text", x=3.7,y=2.2, label = "54.5", size=5)+
   
-  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.7,ymax=2, alpha=.5, fill="white", color="green",lwd=1)+
-  annotate("text", x=0.9,y=1.85, label = "11.6", size=3)
+  annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
+  annotate("text", x=0.9,y=2.2, label = "11.6", size=5)
 GiniA10
 
 
@@ -845,19 +850,3 @@ grid.arrange(p1,p2,nrow=2)#final bubble plot figure for the overlapping analysis
 
 
 #End of the script#
-
-
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
