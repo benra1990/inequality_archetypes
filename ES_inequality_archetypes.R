@@ -554,7 +554,7 @@ colnames(annotation_final)[1:10]<-c("cluster1","cluster2", "cluster3", "cluster4
 
 GiniA1<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster1, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-1") +
@@ -576,7 +576,7 @@ GiniA1
 
 GiniA2<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster2, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-2") +
@@ -597,7 +597,7 @@ GiniA2
 
 GiniA3<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster3, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-3") +
@@ -619,7 +619,7 @@ GiniA3
 
 GiniA4<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster4, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-4") +
@@ -641,7 +641,7 @@ GiniA4
 
 GiniA5<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster5, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-5") +
@@ -662,7 +662,7 @@ GiniA5
 
 GiniA6<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster6, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-6") +
@@ -681,10 +681,9 @@ GiniA6
 
 
 
-
 GiniA7<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster7, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-7") +
@@ -706,7 +705,7 @@ GiniA7
 
 GiniA8<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster8, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-8") +
@@ -728,7 +727,7 @@ GiniA8
 
 GiniA9<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster9, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-9") +
@@ -750,7 +749,7 @@ GiniA9
 
 GiniA10<-ggplot(barplot_db1, aes(x=factor(ES, levels=ES), y=cluster10, color=ES))+ geom_bar(stat="identity",position="dodge", fill="white", lwd=1.2) +
   coord_flip()+
-  scale_y_continuous(breaks=seq(-3,3,0.5), labels=seq(-3,3,0.5), limit=c(-3, 3))+
+  scale_y_continuous(breaks=seq(-3,3,1), labels=seq(-3,3,1), limit=c(-3, 3))+
   scale_x_discrete(limits=rev)+
   scale_color_manual(breaks=c("Gini water supply", "Gini native timber", "Gini non-native timber","Gini water regulation", "Gini carbon sequestration", "Gini carbon storage", "Gini erosion prevention", "Gini recreation"), values=c("#006CD1","#006CD1", "#006CD1","purple","purple","purple","purple","#994F00"))+
   ggtitle("InqA-10") +
@@ -766,7 +765,6 @@ GiniA10<-GiniA10 + annotate("rect", xmin=6.5,xmax=7.5,ymin=1.8,ymax=2.6, alpha=.
   annotate("rect", xmin=0.4,xmax=1.4,ymin=1.8,ymax=2.6, alpha=.5, fill="white", color="#994F00",lwd=1)+
   annotate("text", x=0.9,y=2.2, label = "11.6", size=5)
 GiniA10
-
 
 #put all graphs together with gridExtra
 
